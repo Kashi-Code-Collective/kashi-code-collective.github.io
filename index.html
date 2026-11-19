@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<section class="intro">
+  <h1>Welcome to {{ site.title }}</h1>
+  <p>
+    {{ site.title }} is a volunteer-run technical community and public charitable trust founded in Varanasi.
+    We build and maintain free and open source software, provide technical support and develop software solutions
+    for public universities and institutions, work on localisation of technology into Indian languages, help NGOs and community
+    groups with their digital needs, and give students real project experience.
+  </p>
+</section>
+
+<section class="quick-links">
+  {%- for item in site.data.navigation -%}
+    {%- unless item.url == "/" -%}
+      <a class="card" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {%- endunless -%}
+  {%- endfor -%}
+</section>
+
+<section>
+  <h2>Major projects</h2>
+  <ul class="project-list">
+    {%- assign featured = site.data.projects | where: "featured", true -%}
+    {%- for project in featured -%}
+      <li>
+        <a href="{{ project.url }}"><strong>{{ project.name }}</strong></a>
+        <span>{{ project.description }}</span>
+      </li>
+    {%- endfor -%}
+  </ul>
+  <p><a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a></p>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  {%- for post in site.posts -%}
+    <article class="news-item">
+      <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    </article>
+  {%- else -%}
+    <p>No news yet.</p>
+  {%- endfor -%}
+</section>

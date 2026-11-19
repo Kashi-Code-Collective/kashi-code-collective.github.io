@@ -1,0 +1,14 @@
+title: Kashi Code Collective
+description: A community of people who like to build things with code.
+url: ""        # e.g. https://kashicode.github.io
+baseurl: ""    # e.g. /KCC_website if served from a subpath
+
+permalink: /news/:year/:month/:day/:title/
+
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

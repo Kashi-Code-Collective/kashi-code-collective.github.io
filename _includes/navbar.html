@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <button class="navbar-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbar-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="navbar-menu" id="navbar-menu">
+    {%- for item in site.data.navigation -%}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+    {%- endfor -%}
+  </div>
+</nav>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.navbar-toggle');
+    var menu = document.getElementById('navbar-menu');
+
+    toggle.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  })();
+</script>

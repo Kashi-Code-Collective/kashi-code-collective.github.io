@@ -1,0 +1,26 @@
+# Major projects shown on the home page and the Projects page.
+# Set `featured: true` to show a project on the home page.
+- name: Muzik Player
+  description: A visually immersive local music player for Android
+  url: https://github.com/rajsriv/muzik-Player
+  maintainer: Raj Srivastava
+  featured: true
+- name:  Dynamic Island for Windows
+  description:  A sleek, fluid, and highly customizable Dynamic Island for Windows built with Python and PyQt6. 
+  url: https://github.com/rajsriv/dynamic-island-for-windows
+  maintainer: Raj Srivastava
+  featured: true
+- name: Classmark
+  description: Institutional Attendance Monitoring & Fraud Prevention System
+  url: https://github.com/aj-6396/classmark
+  maintainer: Ambuj Singh
+  featured: true
+- name: Web Apps
+  description: Install websites as desktop apps
+  url: https://codeberg.org/eyekay/webapps
+  maintainer: Satvik Patwardhan
+  featured: true
+- name: Clicker
+  description: Autoclicker for Linux desktops
+  url: https://gitlab.gnome.org/eyekay/clicker
+  maintainer: Satvik Patwardhan

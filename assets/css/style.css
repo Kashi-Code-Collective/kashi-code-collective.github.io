@@ -1,0 +1,156 @@
+:root {
+  --green: #2e8b57;
+  --green-dark: #246c43;
+  --text: #222;
+  --muted: #666;
+  --border: #ddd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+}
+
+a { color: var(--green); }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* Header */
+.header { padding: 1rem; text-align: center; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--green);
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+}
+.navbar a:hover,
+.navbar a.active { background: var(--green-dark); }
+
+/* Home */
+section { margin-bottom: 2.5rem; }
+.intro h1 { margin-top: 0; }
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+.card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+.card:hover { border-color: var(--green); background: #f3faf6; }
+
+.project-list { list-style: none; padding: 0; }
+.project-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-list span { display: block; color: var(--muted); }
+
+.news-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.news-item h3 { margin: 0 0 0.25rem; }
+.news-item p { margin: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Desktop: menu is a centered row that fills the bar */
+.navbar-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Hamburger button: hidden on desktop */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate the three bars into an X when open */
+.navbar-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-menu a {
+    padding: 0.75rem 1rem;
+  }
+}
